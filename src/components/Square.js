@@ -4,11 +4,16 @@ import { Context } from '../Context'
 const Square = ({square}) => {
 
     const {updateBoard} = useContext(Context)
-    //console.log(`square with id of ${square.id} is now ${square.isSelected}`)
+    const styles = {
+        ...square.styles,
+        backgroundColor : square.isSelected ? "rgba(0, 0, 255, 0.424)" : {}
+    }
+    console.log(`square with id of ${square.id} is now ${square.isSelected}`)
 
   return (
     <div 
         className="square"
+        style = {styles}
         onClick={() => updateBoard(square)}
         >
         {square.isSelected && "X"}

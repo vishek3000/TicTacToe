@@ -23,7 +23,7 @@ body{
 .square{
   width: 33vw;
   height: 100px;
-  border: 1px solid #0000ff;
+  /* border: 1px solid #0000ff; */
   transition: 0.2s ease-in;
   background-color: rgba(0, 0, 255, 0);
   text-align: center;
@@ -32,7 +32,7 @@ body{
 }
 
 .square:hover{
-  background-color: rgba(0, 0, 255, 0.424);
+  background-color: rgba(0, 0, 255, 0.424) !important;
   transition: 0.2s ease-in;
   cursor: pointer;
 }

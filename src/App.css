@@ -2,9 +2,10 @@ body{
   margin: 0;
   padding: 20px;
   display: flex;
-  align-items: 0;
+  align-items: center;
   justify-content: center;
   justify-items: center;
+  text-align: center;
 }
 
 .grid {
@@ -14,8 +15,7 @@ body{
 
 .board-container{
   width: 100vw;
-  height: 300px;
-  /* border: 1px solid red; */
+  height: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
@@ -35,5 +35,26 @@ body{
   background-color: rgba(0, 0, 255, 0.424);
   transition: 0.2s ease-in;
   cursor: pointer;
+}
+
+.reset{
+  margin-top: 15px;
+  height: 30px;
+  background-color: white;
+  border: 1px solid #4993e2;
+  width: 100px;
+  border-radius: 4px;
+  font-family: Inter;
+  font-size: 22px;
+  color: rgb(75, 75, 75);
+  transition: 0.2s ease;
+  font-weight: 600;
+}
+
+.reset:hover{
+  background-color: #4993e2;
+  transition: 0.2s ease;
+  cursor: pointer;
+
 }
 

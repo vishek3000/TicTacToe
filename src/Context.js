@@ -1,8 +1,12 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import squares from './squares';
+
 
 const Context = React.createContext()
 
 function ContextProvider({children}){
+    const [reset, setReset] = useState(false)
+    const [allSquares, setAllSquares] = useState([])
 
     const [board, setBoard] = useState(
         {
@@ -10,10 +14,23 @@ function ContextProvider({children}){
           y2: [0,0,0],
           y3: [0,0,0]
     })
-    
-    function updateBoard(id){
-        const x = id % 3 // this is the 'x' position
-        const y = Math.floor(id / 3) // this is the 'y' position
+
+    // set Squares
+    useEffect(() =>{
+        setAllSquares(squares)
+    }, [reset])
+
+    function updateSelected(square){
+        setAllSquares(prev =>(
+            prev.map(sq =>(
+                sq.id === square.id ? {...sq, isSelected: !sq.isSelected} : sq
+            ))
+        ))
+    }
+
+    function updateBoard(square){
+        const x = square.id % 3 // this is the 'x' position
+        const y = Math.floor(square.id / 3) // this is the 'y' position
 
         setBoard(prev =>{
             if (y === 0){
@@ -32,7 +49,10 @@ function ContextProvider({children}){
                 return {...prev, y3: newArr}
             }
         })
+        updateSelected(square)
+        //checkIfBoardFull()
     }
+    
     console.log(board)
 
     function clearBoard(){
@@ -41,11 +61,12 @@ function ContextProvider({children}){
             y2: [0,0,0],
             y3: [0,0,0]
         })
+        setReset(prev => !prev)
+        //setBoardFull(false)
     }
 
-
     return (
-        <Context.Provider value={{board, updateBoard, clearBoard}}>
+        <Context.Provider value={{board, updateBoard, clearBoard, allSquares}}>
             {children}
         </Context.Provider>
     )

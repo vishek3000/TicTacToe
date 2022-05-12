@@ -5,7 +5,12 @@ import { Context } from '../Context'
 const Reset = () => {
     const {clearBoard} = useContext(Context)
   return (
-    <button onClick={clearBoard}>Reset</button>
+    <button 
+        className='reset'
+        onClick={clearBoard}
+        >
+        Reset
+    </button>
   )
 }
 

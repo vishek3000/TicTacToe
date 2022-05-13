@@ -50,6 +50,7 @@ function ContextProvider({children}){
             }
         })
         updateSelected(square)
+        computersMove()
         //checkIfBoardFull()
     }
     
@@ -63,6 +64,14 @@ function ContextProvider({children}){
         })
         setReset(prev => !prev)
         //setBoardFull(false)
+    }
+
+    function computersMove(){
+        const unselectedSquares = allSquares.filter(square => !square.isSelected)
+        console.log(unselectedSquares)
+        // Select a random square from 0 to 8
+        // check if squares value is zero
+        // change squares value to 2 and put a 'O' inside
     }
 
     return (

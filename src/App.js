@@ -1,16 +1,14 @@
 import './App.css';
 import React, {useContext} from 'react'
 import { nanoid } from 'nanoid'
-
 import Square from "./components/Square"
-import Reset from './components/Reset';
-
+import Reset from './components/Reset'
+import Modal from "./components/Modal"
 import {Context} from "./Context"
 
 function App() {
-
-  const {allSquares} = useContext(Context)
-
+  const {allSquares, isBoardFull, playerWon, clickable} = useContext(Context)
+  const styles = {pointerEvents: clickable ? "auto" : "none"}
   // Generate squares
   const squareElements = allSquares.map((square) => (
     <Square 
@@ -18,17 +16,15 @@ function App() {
       square={square}
     />)
   )
-
-  //console.log(squareElements)
   return (
     <div>
       <h1>Tic Tac Toe</h1>
-      <div className='board-container'>
+      <div style={styles} className='board-container'>
         {squareElements}
       </div>
-      <Reset />
+      {isBoardFull && <Reset />}
+      {playerWon && <Modal />}
     </div>
-
   );
 }
 

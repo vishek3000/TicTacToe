@@ -2,6 +2,8 @@ const squares = [
     {
         id: 0,
         isSelected: false,
+        playerSelected: false,
+        computerSelected: false,
         styles : {
             borderTop: "none",
             borderRight: "solid",
@@ -12,6 +14,8 @@ const squares = [
     {
         id: 1,
         isSelected: false,
+        playerSelected: false,
+        computerSelected: false,
         styles : {
             borderTop: "none",
             borderRight: "solid",
@@ -22,6 +26,8 @@ const squares = [
     {
         id: 2,
         isSelected: false,
+        playerSelected: false,
+        computerSelected: false,
         styles : {
             borderTop: "none",
             borderRight: "none",
@@ -32,6 +38,8 @@ const squares = [
     {
         id: 3,
         isSelected: false,
+        playerSelected: false,
+        computerSelected: false,
         styles : {
             borderTop: "solid",
             borderRight: "solid",
@@ -42,6 +50,8 @@ const squares = [
     {
         id: 4,
         isSelected: false,
+        playerSelected: false,
+        computerSelected: false,
         styles : {
             borderTop: "solid",
             borderRight: "solid",
@@ -52,6 +62,8 @@ const squares = [
     {
         id: 5,
         isSelected: false,
+        playerSelected: false,
+        computerSelected: false,
         styles : {
             borderTop: "solid",
             borderRight: "none",
@@ -62,6 +74,8 @@ const squares = [
     {
         id: 6,
         isSelected: false,
+        playerSelected: false,
+        computerSelected: false,
         styles : {
             borderTop: "solid",
             borderRight: "solid",
@@ -72,6 +86,8 @@ const squares = [
     {
         id: 7,
         isSelected: false,
+        playerSelected: false,
+        computerSelected: false,
         styles : {
             borderTop: "solid",
             borderRight: "solid",
@@ -82,6 +98,8 @@ const squares = [
     {
         id: 8,
         isSelected: false,
+        playerSelected: false,
+        computerSelected: false,
         styles : {
             borderTop: "solid",
             borderRight: "none",

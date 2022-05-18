@@ -8,15 +8,16 @@ const Square = ({square}) => {
         ...square.styles,
         backgroundColor : square.isSelected ? "rgba(0, 0, 255, 0.424)" : {}
     }
-    console.log(`square with id of ${square.id} is now ${square.isSelected}`)
+    //console.log(`square with id of ${square.id} is now ${square.isSelected}`)
 
   return (
     <div 
         className="square"
         style = {styles}
-        onClick={() => updateBoard(square)}
+        onClick={() => updateBoard(square, 1)}
         >
-        {square.isSelected && "X"}
+        {square.playerSelected && "X"}
+        {square.computerSelected && "O"}
         </div>
   )
 }
